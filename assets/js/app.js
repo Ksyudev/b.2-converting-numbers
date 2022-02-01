@@ -46,7 +46,43 @@ const teenth = {
     '9':'дев`ятнадцять гривень'
     };
     
-    let number = prompt ('Введіть число');
+    let number = prompt ('Введіть число від 1 до 999');
     let arrnumber = [...number];
           console.log (`Ваше число = ${arrnumber}`);
           console.log (`lenght = ${arrnumber.length}`);
+        
+
+      let result = 0; 
+      let result1 = 0; 
+      let result2 = 0; 
+      let result3 = 0;
+
+    if (arrnumber.length==1)
+       
+        {result= single[arrnumber[0]];}    
+
+    else if (arrnumber.length==2)
+
+        {   if (arrnumber[0]==1)
+                { result = teenth[arrnumber[1]];}
+            else if (arrnumber[0] >1)
+                {result1 = decades[arrnumber[0]];
+                 result1 = result1.split(" "); 
+                 result2 = single[arrnumber[1]];
+                 result = result1.concat(result2); 
+
+                }
+        }
+    else if (arrnumber.length==3) 
+        {  result1 = hundred[arrnumber[0]];
+           result1 = result1.split(" "); 
+            if (arrnumber[1]==1)
+                {result2 = teenth[arrnumber[2]];}
+            else if (arrnumber[0] >1)
+                {result2 = decades[arrnumber[1]];
+                 result3 = single[arrnumber[2]];}
+                 result = result1.concat(result2).concat(result3); 
+         }   
+
+    console.log (`2-й = ${arrnumber[1]}`);
+    console.log (`result = ${result}`);

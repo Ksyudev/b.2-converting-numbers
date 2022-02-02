@@ -34,8 +34,8 @@ const single = {
     };
 
 const teenth = {
-    '10':'десять гривень',
-    '1':'оддинадцять гривень',
+    '0':'десять гривень',
+    '1':'одинадцять гривень',
     '2':'дванадцять гривень',
     '3':'тринадцять гривень',
     '4':'чотирнадцять гривень',
@@ -47,10 +47,9 @@ const teenth = {
     };
     
     let number = prompt ('Введіть число від 1 до 999');
+    console.log (`Ваше число = ${number}`);
     let arrnumber = [...number];
-          console.log (`Ваше число = ${arrnumber}`);
-          console.log (`lenght = ${arrnumber.length}`);
-        
+          
 
       let result = 0; 
       let result1 = 0; 
@@ -67,22 +66,19 @@ const teenth = {
                 { result = teenth[arrnumber[1]];}
             else if (arrnumber[0] >1)
                 {result1 = decades[arrnumber[0]];
-                 result1 = result1.split(" "); 
                  result2 = single[arrnumber[1]];
-                 result = result1.concat(result2); 
+                 result = result1 + " " + result2; 
 
                 }
         }
     else if (arrnumber.length==3) 
         {  result1 = hundred[arrnumber[0]];
-           result1 = result1.split(" "); 
             if (arrnumber[1]==1)
-                {result2 = teenth[arrnumber[2]];}
-            else if (arrnumber[0] >1)
+                {result2 = teenth[arrnumber[2]];
+                result = result1+ " " + result2;}
+            else if (arrnumber[1] >1)
                 {result2 = decades[arrnumber[1]];
-                 result3 = single[arrnumber[2]];}
-                 result = result1.concat(result2).concat(result3); 
+                 result3 = single[arrnumber[2]];
+                 result = result1+ " " + result2+" "+ result3; }
          }   
-
-    console.log (`2-й = ${arrnumber[1]}`);
-    console.log (`result = ${result}`);
+    console.log (`Число прописом = ${result}`);

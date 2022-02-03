@@ -21,7 +21,7 @@ const decades = {
     '9':'дев`яносто'
     };
 const single = {
-    '0': " ",
+    '0': 'гривень',
     '1':'одна гривня',
     '2':'дві гривні',
     '3':'три гривні',
@@ -64,7 +64,7 @@ const teenth = {
 
         {   if (arrnumber[0]==1)
                 { result = teenth[arrnumber[1]];}
-            else if (arrnumber[0] >1)
+            else 
                 {result1 = decades[arrnumber[0]];
                  result2 = single[arrnumber[1]];
                  result = result1 + " " + result2; 
@@ -76,9 +76,12 @@ const teenth = {
             if (arrnumber[1]==1)
                 {result2 = teenth[arrnumber[2]];
                 result = result1+ " " + result2;}
-            else if (arrnumber[1] >1)
-                {result2 = decades[arrnumber[1]];
+            else 
+                 {result2 = decades[arrnumber[1]];
                  result3 = single[arrnumber[2]];
+                 if (arrnumber[1]==0)
+                 {result = result1+ " "+ result3; }
+                 else
                  result = result1+ " " + result2+" "+ result3; }
          }   
     console.log (`Число прописом = ${result}`);
